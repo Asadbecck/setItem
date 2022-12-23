@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="wrap">
+            <h2>Add dynamic Input Fields</h2>
+            <a href="#" class="add">&plus;</a>
+        </div>
+    <div class="inp-group">
+
+    </div>
+    </div>
+
+
+<script>
+
+const addBtn = document.querySelector('.add')
+
+const input = document.querySelector('.inp-group')
+
+function removeInput(){
+this.parentElement.remove()
+}
+
+
+
+
+function addinp(){
+    const name = document.createElement("input");
+    name.type = "text";
+
+    const email = document.createElement("input")
+    email.type = "email";
+    email.placeholder = "Enter Your Email"
+
+
+    const btnDel = document.createElement("a")
+    btnDel.className = "delete"
+    btnDel.innerHTML = "x"
+
+    btnDel.addEventListener("click", removeInput)
+
+
+    const flex = document.createElement("div")
+    flex.className = "flex";
+
+
+    input.appendChild(flex)
+    flex.appendChild(name)
+    flex.appendChild(email)
+    flex.appendChild(btnDel)
+
+}
+
+addBtn.addEventListener("click", addinp)
+
+
+
+
+
+
+
+
+const date = new Date();
+console.log(date)
+
+
+
+</script>
+    
+</body>
+</html>
